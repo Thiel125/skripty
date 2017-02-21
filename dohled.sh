@@ -16,8 +16,8 @@ pamet=`free | grep Mem: | awk -F " " '{print $3}'`
 disk=`df -h | grep /dev/sda1 | awk -F " " '{print $2}'`
 
 pouzito=`df -h | grep /dev/sda1 | awk -F " " '{print $3}'`
-procenta=``
-#velikost disku, použito, použito v %
+
+procenta=`df -h | grep /dev/sda1 | awk -F " " '{print $5}'`
 
 
 
@@ -29,3 +29,4 @@ echo "Odeslaná data: "$tx
 echo "Obsazenost paměti: "$pamet" bytes"
 echo "Velikost disku: "$disk
 echo "Využito místa: "$pouzito
+echo "Procentuálně: "$procenta
